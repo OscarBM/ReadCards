@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 if (scanResult.isExpiryValid()) {
                     resultDisplayStr += "Expiration Date: " + scanResult.expiryMonth + "/" + scanResult.expiryYear + "\n";
                     TextView expiricy =(TextView) findViewById(R.id.expiricy);
-                    creditCardNumber.setText(scanResult.expiryMonth + " " + scanResult.expiryYear);
+                    creditCardNumber.setText("Expiración: "+scanResult.expiryMonth + " " + scanResult.expiryYear);
 
                 }
 
@@ -77,14 +77,14 @@ public class MainActivity extends AppCompatActivity {
                     // Never log or display a CVV
                     resultDisplayStr += "CVV has " + scanResult.cvv.length() + " digits.\n";
                     TextView cvv =(TextView) findViewById(R.id.cvv);
-                    creditCardNumber.setText(scanResult.cvv);
+                    creditCardNumber.setText("CVV: "+scanResult.cvv);
 
                 }
 
                 if (scanResult.postalCode != null) {
                     resultDisplayStr += "Postal Code: " + scanResult.postalCode + "\n";
                     TextView postalCode =(TextView) findViewById(R.id.cvv);
-                    creditCardNumber.setText(scanResult.postalCode);
+                    creditCardNumber.setText("Codigo postal: "+scanResult.postalCode);
                 }
             }
             else {
