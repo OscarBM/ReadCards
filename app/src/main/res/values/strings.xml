@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ReadCards</string>
+    <string name="button_scan">Scanear codigo</string>
+</resources>
