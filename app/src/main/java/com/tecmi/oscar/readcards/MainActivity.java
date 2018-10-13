@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 // Never log a raw card number. Avoid displaying it, but if necessary use getFormattedCardNumber()
                 resultDisplayStr = "Card Number: " + scanResult.getRedactedCardNumber() + "\n";
                 TextView creditCardNumber =(TextView) findViewById(R.id.creditCardNumber);
-                creditCardNumber.setText(scanResult.cardNumber);
+                creditCardNumber.setText("Numero de tarjeta: "+scanResult.cardNumber);
 
                 // Do something with the raw number, e.g.:
                 // myService.setCardNumber( scanResult.cardNumber );
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 if (scanResult.isExpiryValid()) {
                     resultDisplayStr += "Expiration Date: " + scanResult.expiryMonth + "/" + scanResult.expiryYear + "\n";
                     TextView expiricy =(TextView) findViewById(R.id.expiricy);
-                    creditCardNumber.setText("Expiración: "+scanResult.expiryMonth + " " + scanResult.expiryYear);
+                    expiricy.setText("Expiración: "+scanResult.expiryMonth + " " + scanResult.expiryYear);
 
                 }
 
@@ -77,14 +77,14 @@ public class MainActivity extends AppCompatActivity {
                     // Never log or display a CVV
                     resultDisplayStr += "CVV has " + scanResult.cvv.length() + " digits.\n";
                     TextView cvv =(TextView) findViewById(R.id.cvv);
-                    creditCardNumber.setText("CVV: "+scanResult.cvv);
+                    cvv.setText("CVV: "+scanResult.cvv);
 
                 }
 
                 if (scanResult.postalCode != null) {
                     resultDisplayStr += "Postal Code: " + scanResult.postalCode + "\n";
                     TextView postalCode =(TextView) findViewById(R.id.cvv);
-                    creditCardNumber.setText("Codigo postal: "+scanResult.postalCode);
+                    postalCode.setText("Codigo postal: "+scanResult.postalCode);
                 }
             }
             else {
